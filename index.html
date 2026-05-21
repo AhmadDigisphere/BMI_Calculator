@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>BMI Calculator | Professional Health Tool</title>
+    <!-- Google Fonts & Font Awesome 6 (free) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="bmi-card">
+        <div class="card-header">
+            <i class="fas fa-heartbeat"></i>
+            <div>
+                <h1>BMI Calculator</h1>
+                <p>Accurate body mass index · Health assessment</p>
+            </div>
+        </div>
+        <div class="card-content">
+            <!-- Unit toggle : Metric / Imperial -->
+            <div class="unit-toggle">
+                <div class="unit-btn active" data-unit="metric">
+                    <i class="fas fa-ruler-combined"></i> <span>Metric (cm/kg)</span>
+                </div>
+                <div class="unit-btn" data-unit="imperial">
+                    <i class="fas fa-weight-hanging"></i> <span>Imperial (ft/in/lbs)</span>
+                </div>
+            </div>
+
+            <!-- METRIC INPUTS (visible by default) -->
+            <div id="metric-fields">
+                <div class="input-group">
+                    <div class="input-label"><i class="fas fa-arrow-up"></i> Height <span
+                            style="font-weight: 400;">(centimeters)</span></div>
+                    <input type="number" id="height-cm" class="input-field" placeholder="e.g., 175" step="0.1"
+                        value="170">
+                </div>
+                <div class="input-group">
+                    <div class="input-label"><i class="fas fa-weight-scale"></i> Weight <span
+                            style="font-weight: 400;">(kilograms)</span></div>
+                    <input type="number" id="weight-kg" class="input-field" placeholder="e.g., 70" step="0.1"
+                        value="70">
+                </div>
+            </div>
+
+            <!-- IMPERIAL INPUTS (hidden initially) -->
+            <div id="imperial-fields" style="display: none;">
+                <div class="double-inputs">
+                    <div class="input-group">
+                        <div class="input-label"><i class="fas fa-ruler"></i> Feet</div>
+                        <input type="number" id="height-ft" class="input-field" placeholder="Feet" step="1" value="5"
+                            min="0">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-label"><i class="fas fa-ruler"></i> Inches</div>
+                        <input type="number" id="height-in" class="input-field" placeholder="Inches" step="0.5"
+                            value="7" min="0" max="11.5">
+                    </div>
+                </div>
+                <div class="inline-hint"><i class="fas fa-info-circle"></i> Total height = feet × 12 + inches</div>
+                <div class="input-group" style="margin-top: 1rem;">
+                    <div class="input-label"><i class="fas fa-weight-scale"></i> Weight <span
+                            style="font-weight: 400;">(pounds)</span></div>
+                    <input type="number" id="weight-lbs" class="input-field" placeholder="e.g., 155" step="0.5"
+                        value="155">
+                </div>
+            </div>
+
+            <!-- Calculate Button -->
+            <button class="calc-btn" id="calculateBtn">
+                <i class="fas fa-calculator"></i> Calculate BMI
+            </button>
+
+            <!-- Result panel -->
+            <div class="result-area" id="resultPanel">
+                <div class="bmi-value" id="bmiNumber">—</div>
+                <div class="bmi-category" id="bmiCategory">
+                    <i class="fas fa-chart-line"></i> <span id="categoryText">Ready</span>
+                </div>
+                <div class="category-message" id="categoryMessage">Enter your height & weight and press calculate</div>
+
+                <!-- Visual BMI Scale -->
+                <div class="bmi-scale-container">
+                    <div class="scale-bar" id="scaleBar">
+                        <div class="pointer-icon" id="bmiPointer"><i class="fas fa-caret-down"></i></div>
+                    </div>
+                    <div class="scale-markers">
+                        <span>Underweight < 18.5</span>
+                                <span>Normal 18.5–24.9</span>
+                                <span>Overweight 25–29.9</span>
+                                <span>Obesity ≥ 30</span>
+                    </div>
+                </div>
+                <div id="errorMsg" style="min-height: 40px;"></div>
+            </div>
+            <div class="footer-note">
+                <i class="fas fa-stethoscope"></i> BMI is a screening tool — consult a professional for medical advice.
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
