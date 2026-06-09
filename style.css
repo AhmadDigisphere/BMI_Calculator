@@ -309,3 +309,54 @@
           gap: 0;
       }
   }
+ /* ==========FOOTER WITH BRANDING CLICKABLE LINK ========== */
+   .footer-brand {
+       text-align: center;
+       padding-top: 1rem;
+       margin-top: 1rem;
+       font-size: 0.8rem;
+       color: #5a6f88;
+       border-top: 1px solid #e2edf2;
+   }
+
+   .footer-brand a {
+       color: #1e4663;
+       text-decoration: none;
+       font-weight: 600;
+       transition: color 0.2s;
+       display: inline-flex;
+       align-items: center;
+       gap: 0.4rem;
+   }
+
+   .footer-brand a:hover {
+       color: #0f2c41;
+       text-decoration: underline;
+   }
+
+   .brand-name {
+       font-weight: 700;
+       letter-spacing: -0.2px;
+   }
+
+   @media (max-width: 520px) {
+       .card-content {
+           padding: 1.5rem;
+       }
+
+       .bmi-value {
+           font-size: 2.4rem;
+       }
+
+       .unit-btn span {
+           display: none;
+       }
+
+       .unit-btn i {
+           margin: 0;
+       }
+
+       .unit-btn {
+           gap: 0;
+       }
+   }
